@@ -63,7 +63,9 @@ body {
 }
 
 .cell.x::before,
-.cell.x::after{
+.cell.x::after,
+.cell.o::before,
+.cell.o::after{
     background-color: black;
 }
 
@@ -90,11 +92,6 @@ body {
 .cell.x::after,
 .board.x .cell:not(.x):not(.o):hover::after{
     transform: rotate(-45deg);
-}
-
-.cell.o::before,
-.cell.o::after{
-    background-color: black;
 }
 
 .board.o .cell:not(.x):not(.o):hover::before,
@@ -127,4 +124,39 @@ body {
 .cell.x,
 .cell.o {
     cursor: not-allowed;
+}
+
+/* button */
+
+.winning-message {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    background-color: black;
+    color: white;
+    font-size: 5rem;
+    flex-direction: column;
+}
+
+.winning-message button{
+    font-size: 3rem;
+    background-color: white;
+    border: 1px solid black;
+    padding: .25em .5em;
+    cursor: pointer;
+}
+
+.winning-message button:hover {
+    background-color: black;
+    color: white;
+    border-color: white;
+}
+
+.winning-message.show{
+    display: flex;
 }
