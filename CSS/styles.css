@@ -11,18 +11,9 @@ body {
     margin: 0;
 }
 
-.title {
-    width: 100%;
-    height: auto;
-    text-align: center;
-    font-size: 3.5rem;
-    color: indigo;
-    margin-top: 0;
-}
-
 .board {
     width: 100vw;
-    height: 65vh;
+    height: 100vh;
     display: grid;
     justify-content: center;
     align-content: center;
@@ -128,7 +119,8 @@ body {
 
 /* button */
 
-.winning-message {
+.winning-message,
+.title {
     position: fixed;
     top: 0;
     bottom: 0;
@@ -138,25 +130,30 @@ body {
     justify-content: center;
     align-items: center;
     background-color: black;
+    font-family: 'Zen Dots', cursive;
     color: white;
     font-size: 5rem;
     flex-direction: column;
 }
 
-.winning-message button{
+.winning-message button,
+.title button{
     font-size: 3rem;
+    font-family: 'Pacifico', cursive;
     background-color: white;
     border: 1px solid black;
     padding: .25em .5em;
     cursor: pointer;
 }
 
-.winning-message button:hover {
+.winning-message button:hover,
+.title button:hover {
     background-color: black;
     color: white;
     border-color: white;
 }
 
-.winning-message.show{
+.winning-message.show,
+.title.show {
     display: flex;
 }

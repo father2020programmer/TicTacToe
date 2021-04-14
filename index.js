@@ -3,6 +3,8 @@ const board = document.getElementById('board');
 const winningMessageElement = document.getElementById('winning-message')
 const winningTextElement = document.querySelector('[data-winning-text]');
 const restartBtn = document.getElementById('restartbtn');
+const startScreen = document.getElementById('start-screen');
+const startBtn = document.getElementById('start-btn');
 const winningConbinations = [
     [0, 1, 2], [3, 4, 5], [6, 7, 8],
     [0, 3, 6], [1, 4, 7], [2, 4, 8],
@@ -14,8 +16,13 @@ const o_Class = 'o';
 let circleTurn;
 
 restartBtn.addEventListener('click', startGame);
+titleSceen()
 
-startGame();
+
+function titleSceen(){
+    startBtn.addEventListener('click', startGame);
+    startScreen.classList.add('show');
+}
 
 function startGame(){    
     circleTurn = false;
@@ -27,6 +34,7 @@ function startGame(){
     });
     setBoardClass()
     winningMessageElement.classList.remove('show');
+    startScreen.classList.remove('show');
 }
 
 function handleClick(e) {
